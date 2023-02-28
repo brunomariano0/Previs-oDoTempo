@@ -24,6 +24,7 @@ body{
     padding: 2rem;
     color: #fdfdfd;
     border-radius: 1rem;
+    
 }
 
 /* form */
@@ -123,4 +124,29 @@ footer span {
     font-size: 1rem;
     font-style: bold;
     color: #fff;
+}
+
+.container-days{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {    
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+
+#day {
+    text-size: 0.6rem;
+}
+
+#img-clima {
+    width: 5rem;
+}
+
+#temp-max{
+    padding:0.5rem;
 }
