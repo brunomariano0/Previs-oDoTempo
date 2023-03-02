@@ -8,7 +8,7 @@ const cityElement = document.querySelector("#city");
 const tempElement = document.querySelector("#temperature span");
 const descElement = document.querySelector("#description");
 const weatherIconElement = document.querySelector("#weather-icon");
-const weatherContainer = document.querySelector('#weather-data');
+const weatherContainer = document.querySelector("#weather-data");
 const countryElement = document.querySelector("#country");
 const humidityElement = document.querySelector("#humidity span");
 const windElement = document.querySelector("#wind span");
@@ -20,31 +20,31 @@ const tempMinElement = document.querySelector("#temp-min");
 var currentDate = new Date();
 currentDate.setDate(currentDate.getDate() + 1);
 
-
 // Funções
-const getWeatherData = async(city) => {
-    const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`
+const getWeatherData = async (city) => {
+    const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
 
     const res = await fetch(apiWeatherURL);
     const data = await res.json();
 
-    return (data);
+    return data;
 };
 
 const showWeatherData = async (city) => {
-     const data = await getWeatherData(city);
+    const data = await getWeatherData(city);
 
     cityElement.innerText = data.name;
     tempElement.innerText = parseInt(data.main.temp);
     descElement.innerText = data.weather[0].description;
-    weatherIconElement.setAttribute("src", ` http://openweathermap.org/img/wn/${data.weather[0].icon}.png`);
+    weatherIconElement.setAttribute(
+        "src",
+        ` http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+    );
     countryElement.setAttribute("src", apiCountryURL + data.sys.country);
     humidityElement.innerText = `${data.main.humidity}%`;
     windElement.innerText = `${data.wind.speed}km/h`;
 
-   
-    
-    weatherContainer.classList.remove('hide');
+    weatherContainer.classList.remove("hide");
 };
 
 // Eventos
@@ -54,14 +54,35 @@ searchBtn.addEventListener("click", (e) => {
 
     const city = cityInput.value;
 
-   showWeatherData(city);
+    showWeatherData(city);
 });
 
-
-cityInput.addEventListener("Keyup", (e) =>{
+cityInput.addEventListener("Keyup", (e) => {
     if (e.code === "Enter") {
         const city = e.target.value;
 
         showWeatherData(city);
     }
+});
+
+// Relogio
+setInterval(() => {
+    const tempo = document.querySelector("#tempo");
+    let date = new Date();
+    let hora = date.getHours();
+    let minutos = date.getMinutes();
+    let segundos = date.getSeconds();
+    let dia_noite = "AM";
+
+    if (hora > 12) {
+        dia_noite = "PM";
+        hora = hora + 0;
+    }
+    if (minutos < 10) {
+        minutos = "0" + minutos;
+    }
+    if (hora < 10) {
+        hora = "0" + hora;
+    }
+    tempo.textContent = hora + ":" + minutos + "" + dia_noite;
 });

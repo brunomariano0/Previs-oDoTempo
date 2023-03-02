@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-    <!--Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
+        <!--Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+            rel="stylesheet"
+        />
 
-    <!--Font Awesome-->
+        <!--Font Awesome-->
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
 
-    <title>Previsão do Tempo</title>
-  </head>
-  <body>
+        <title>Previsão do Tempo</title>
+    </head>
+    <body>
         <div class="container">
             <div class="form">
                 <h3>Confira o clima de uma cidade:</h3>
                 <div class="form-input-container">
-                    <input type="text" placeholder="Digite o nome da cidade" id="city-input">
+                    <input
+                        type="text"
+                        placeholder="Digite o nome da cidade"
+                        id="city-input"
+                    />
                     <button id="search">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
@@ -34,12 +45,16 @@
                 <h2>
                     <i class="fa-solid fa-location-dot"></i>
                     <span id="city">-</span>
-                    <img src="" alt=""  id="country"/>
+                    <img src="" alt="" id="country" />
                 </h2>
                 <p id="temperature"><span>-</span>&deg;C</p>
                 <div id="description-container">
                     <p id="description">-</p>
-                    <img src="http://openweathermap.org/img/wn/03d@2x.png" alt="COndições do tempo" id="weather-icon">
+                    <img
+                        src="http://openweathermap.org/img/wn/03d@2x.png"
+                        alt="COndições do tempo"
+                        id="weather-icon"
+                    />
                 </div>
                 <div id="details-container">
                     <p id="humidity">
@@ -52,13 +67,21 @@
                         <span>0Km/h</span>
                     </p>
                 </div>
-            </div>                
+
+                <div class="wrapper">
+                    <div class="display">
+                        <span class="hr">Horário Local</span>
+                        <div id="tempo">12:00:00 PM</div>
+                    </div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <footer>
                 <span>Desenvolvido por | Bruno Mariano</span>
             </footer>
         </div>
 
-       
         <script src="/Js/index.js"></script>
-  </body>
+    </body>
 </html>
